@@ -10,9 +10,9 @@ import st1 from "../assets/projects/smart-town/1.jpg";
 import st2 from "../assets/projects/smart-town/2.jpg";
 import st3 from "../assets/projects/smart-town/3.jpg";
 
-import lv1 from "../assets/projects/luminous-Village/1.jpg";
-import lv2 from "../assets/projects/luminous-Village/2.jpg";
-import lv3 from "../assets/projects/luminous-Village/3.jpg";
+import lv1 from "../assets/projects/luminous-village/1.jpg";
+import lv2 from "../assets/projects/luminous-village/2.jpg";
+import lv3 from "../assets/projects/luminous-village/3.jpg";
 
 export const projects = [
   {
