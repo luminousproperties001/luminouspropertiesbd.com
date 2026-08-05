@@ -7,26 +7,26 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-lg shadow-lg border-b border-gray-200">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white/60 backdrop-blur-lg shadow-lg border-b border-gray-200">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-5 py-2">
 
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-5">
           <img
             src={logo}
             alt="Logo"
-            className="w-14 h-14 rounded-full border-2 border-green-700 object-cover"
+           className="mt-0 w-30 h-19 rounded-full border-2 border-green-900 object-cover"
           />
 
           <div>
-            <h1 className="text-2xl font-bold text-black">
-              Luminous Properties
-            </h1>
+  <h1 className="text-6xl font-bold">
+    Luminous Properties
+  </h1>
 
-            <p className="text-sm text-gray-600">
-              Trusted Land Development
-            </p>
-          </div>
+  <p className="text-2xl font-medium text-gray-600">
+    Trusted Land Development
+  </p>
+</div>
         </Link>
 
         {/* Desktop Menu */}

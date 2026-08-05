@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import logo3 from "../assets/logo3.jpg";
+
 import {
   ShieldCheck,
   MapPinned,
@@ -49,9 +52,10 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-6">
 
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -59,32 +63,45 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold text-green-700 mb-4">
-            Why Choose Us
-          </h2>
+          {/* Banner */}
+          <div className="flex justify-center mb-8">
+            <Link to="/">
+              <img
+                src={logo3}
+                alt="Why Choose Us"
+                className="w-full max-w-4xl h-16 rounded-full border-4 border-green-700 object-cover shadow-lg"
+              />
+            </Link>
+          </div>
 
-          <p className="text-gray-600 max-w-3xl mx-auto">
+          <p className="text-gray-600 font-bold text-lg max-w-3xl mx-auto leading-8">
             We are committed to providing secure investment opportunities,
-            premium locations and outstanding customer support.
+            premium locations, modern development and outstanding customer
+            support.
           </p>
         </motion.div>
 
+        {/* Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
           {features.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.15 }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10 }}
+              whileHover={{
+                y: -10,
+                scale: 1.03,
+              }}
               className="bg-gray-50 rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300"
             >
               <div className="w-16 h-16 flex items-center justify-center rounded-full bg-green-100 text-green-700 mb-6">
                 {item.icon}
               </div>
 
-              <h3 className="text-2xl font-semibold mb-3">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">
                 {item.title}
               </h3>
 
@@ -93,6 +110,7 @@ export default function WhyChooseUs() {
               </p>
             </motion.div>
           ))}
+
         </div>
 
       </div>

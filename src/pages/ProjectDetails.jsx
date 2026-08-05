@@ -19,7 +19,7 @@ export default function ProjectDetails() {
 
   if (!project) {
     return (
-      <div className="max-w-7xl mx-auto py-24 text-center">
+      <div className="max-w-7xl mx-auto py-2 text-center">
         <h1 className="text-5xl font-bold text-red-600">
           Project Not Found
         </h1>

@@ -5,7 +5,7 @@ import { projects } from "../data/projects";
 
 export default function FeaturedProjects() {
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-6 bg-blue-50">
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="text-center mb-16">
@@ -13,19 +13,18 @@ export default function FeaturedProjects() {
             Featured Projects
           </h2>
 
-          <p className="text-gray-600 mt-4">
+          <p className="text-1xl font-bold text-blue-600 mt-4">
             Discover our premium land development projects.
           </p>
         </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-4 lg:grid-cols-4 gap-4">
 
           {projects.map((project) => (
 
             <motion.div
               key={project.id}
               whileHover={{ y: -8 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition"
+              className="bg-green rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition"
             >
 
               <div className="overflow-hidden">
