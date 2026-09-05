@@ -22,7 +22,7 @@ export default function Footer() {
           />
 
           <h2 className="text-2xl font-bold text-white mb-4">
-            Luminous Properties Ltd.
+            Luminous Properties Rajshahi.
           </h2>
 
           <p className="text-gray-400 leading-7">
@@ -143,7 +143,7 @@ export default function Footer() {
       <hr className="border-gray-700 my-8" />
 
       <div className="text-center text-gray-500 text-sm px-6">
-        © {new Date().getFullYear()} Luminous Properties Ltd.
+        © {new Date().getFullYear()} Luminous Properties Rajshahi.
         All Rights Reserved.
       </div>
 
