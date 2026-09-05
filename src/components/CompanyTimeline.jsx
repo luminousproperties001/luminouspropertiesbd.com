@@ -6,7 +6,7 @@ const timeline = [
     year: "2020",
     title: "Company Founded",
     description:
-      "Luminous Properties Ltd. officially started its journey in Rajshahi.",
+      "Luminous Properties Rajshahi. officially started its journey in Rajshahi.",
   },
   {
     year: "2021",
