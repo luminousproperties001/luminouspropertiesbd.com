@@ -81,7 +81,7 @@ export default function ContactPage() {
                 </h3>
 
                 <p className="text-gray-600 mt-1">
-                  info@luminousproperties.com
+                  luminousproperties001@gmail.com
                 </p>
               </div>
 
