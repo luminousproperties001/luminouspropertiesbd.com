@@ -103,9 +103,10 @@ export const projects = [
     ],
 
     gallery: [
-      "/projects/smart-town/1.jpg",
-      "/projects/smart-town/2.jpg",
-      "/projects/smart-town/3.jpg",
+      "/projects/Luminous Town/1.jpg",
+      "/projects/Luminous Town/2.jpg",
+      "/projects/Luminous Town/3.jpg",
+      "/projects/Luminous Town/4.jpg",
     ],
   },
 ];
