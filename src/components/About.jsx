@@ -26,7 +26,7 @@ export default function About() {
           </h2>
 
           <p className="text-lg text-gray-600 leading-9 mb-8">
-            Luminous Properties Ltd. is one of the trusted land development
+            Luminous Properties Rajshahi. is one of the trusted land development
             companies in Rajshahi. We provide secure investment opportunities,
             modern residential projects, and excellent customer service.
           </p>
