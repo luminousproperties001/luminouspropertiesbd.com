@@ -11,32 +11,32 @@ import director6 from "../assets/director6.jpg";
 
 const directors = [
   {
-    name: "MR. GOLAM MURTOZA",
+    name: "MR. DIRECTOR",
     position: "Director",
     image: director1,
   },
   {
-    name: "MR. ABDUL HANNAN",
+    name: "MR. DIRECTOR",
     position: "Director",
     image: director2,
   },
   {
-    name: "MR MD JASHIM UDDIN SARKAR",
+    name: "MR MD DIRECTOR",
     position: "Director",
     image: director3,
   },
   {
-    name: "MR. HABIBUL ISLAM SHIMUL",
+    name: "MR. DIRECTOR",
     position: "Director",
     image: director4,
   },
   {
-    name: "MR. IMAM MEHEDI",
+    name: "MR. DIRECTOR",
     position: "Director",
     image: director5,
   },
   {
-    name: "MR. MD SALAH UDDIN AHMED",
+    name: "MR. DIRECTOR",
     position: "Director",
     image: director6,
   },
@@ -71,7 +71,7 @@ export default function Management() {
 
           <PersonCard
             image={chairman}
-            name="MR EMAJ UDDIN MONDAL"
+            name="MR CHAIRMAN"
             position="Chairman"
           />
 
@@ -89,7 +89,7 @@ export default function Management() {
 
           <PersonCard
             image={md}
-            name="MR EMAJ UDDIN MONDAL"
+            name="MR MANAGING DIRECTOR"
             position="Managing Director"
           />
 

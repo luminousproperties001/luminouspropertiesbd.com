@@ -1,14 +1,14 @@
 import { useParams, Link } from "react-router-dom";
-import { projects } from "../data/projects";
-import BookVisitForm from "../components/BookVisitForm";
-import ImageSlider from "../components/ImageSlider";
+import { useState } from "react";
 import {
   MapPin,
   Maximize,
-  CircleDollarSign,
-  CheckCircle,
   Phone,
+  MessageCircle,
+  ArrowLeft,
+  CheckCircle,
 } from "lucide-react";
+import { projects } from "../data/projects";
 
 export default function ProjectDetails() {
   const { id } = useParams();
@@ -17,139 +17,229 @@ export default function ProjectDetails() {
     (item) => item.id === Number(id)
   );
 
+  const [activeImage, setActiveImage] = useState(
+    project?.image || ""
+  );
+
+  // Project না পাওয়া গেলে
   if (!project) {
     return (
-      <div className="max-w-7xl mx-auto py-2 text-center">
-        <h1 className="text-5xl font-bold text-red-600">
-          Project Not Found
-        </h1>
+      <section className="min-h-screen flex items-center justify-center bg-gray-50 px-6">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">
+            Project Not Found
+          </h1>
 
-        <Link
-          to="/projects"
-          className="inline-block mt-8 bg-green-700 text-white px-8 py-3 rounded-lg"
-        >
-          Back to Projects
-        </Link>
-      </div>
+          <Link
+            to="/projects"
+            className="inline-flex items-center gap-2 bg-green-700 text-white px-6 py-3 rounded-lg"
+          >
+            <ArrowLeft size={18} />
+            Back to Projects
+          </Link>
+        </div>
+      </section>
     );
   }
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
+    <main className="bg-gray-50 min-h-screen">
 
-        {/* Hero Image */}
-        <ImageSlider
-  images={project.gallery}
-  title={project.title}
+      {/* Hero */}
+      <section className="relative h-[55vh] min-h-[400px]">
+
+        <img
+          src={activeImage}
+          alt={project.title}
+          className="absolute inset-0 w-full h-full object-cover"
         />
 
-        {/* Content */}
-        <div className="grid lg:grid-cols-3 gap-12 mt-14">
+        <div className="absolute inset-0 bg-black/60" />
 
-          {/* Left Side */}
-          <div className="lg:col-span-2">
+        <div className="relative z-10 h-full max-w-7xl mx-auto px-6 flex items-end pb-12">
+          <div className="text-white">
 
-            <h1 className="text-5xl font-bold text-green-700 mb-6">
+            <Link
+              to="/projects"
+              className="inline-flex items-center gap-2 mb-6 bg-white/20 backdrop-blur-md px-4 py-2 rounded-lg hover:bg-white/30"
+            >
+              <ArrowLeft size={18} />
+              All Projects
+            </Link>
+
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">
               {project.title}
             </h1>
 
-            <div className="space-y-4 text-lg">
-
-              <p className="flex items-center gap-3">
-                <MapPin className="text-green-700" />
+            <div className="flex flex-wrap gap-5 text-lg">
+              <span className="flex items-center gap-2">
+                <MapPin size={20} />
                 {project.location}
-              </p>
+              </span>
 
-              <p className="flex items-center gap-3">
-                <Maximize className="text-green-700" />
+              <span className="flex items-center gap-2">
+                <Maximize size={20} />
                 {project.area}
-              </p>
-
-              <p className="flex items-center gap-3 text-2xl font-bold text-green-700">
-                <CircleDollarSign />
-                {project.price}
-              </p>
-
-            </div>
-
-            <h2 className="text-3xl font-bold mt-12 mb-5">
-              Project Overview
-            </h2>
-
-            <p className="text-gray-600 leading-8">
-              {project.description}
-            </p>
-
-            <h2 className="text-3xl font-bold mt-12 mb-6">
-              Project Facilities
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-5">
-
-              {project.amenities.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-3 bg-white p-4 rounded-xl shadow"
-                >
-                  <CheckCircle className="text-green-700" />
-                  {item}
-                </div>
-              ))}
-
+              </span>
             </div>
 
           </div>
+        </div>
+      </section>
 
-          {/* Right Side */}
-          <div>
+      {/* Main Content */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-6">
 
-            {/* Contact Card */}
-            <div className="bg-white rounded-2xl shadow-xl p-8 sticky top-24">
+          <div className="grid lg:grid-cols-3 gap-10">
 
-              <h2 className="text-3xl font-bold mb-6">
-                Contact Us
-              </h2>
+            {/* Left */}
+            <div className="lg:col-span-2">
 
-              <a
-                href="tel:+8801712345678"
-                className="w-full bg-green-700 hover:bg-green-800 text-white py-4 rounded-xl flex items-center justify-center gap-3 mb-4"
-              >
-                <Phone size={22} />
-                Call Now
-              </a>
+              {/* Gallery */}
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-10">
 
-              <a
-                href="https://wa.me/8801712345678"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full bg-green-500 hover:bg-green-600 text-white py-4 rounded-xl flex items-center justify-center mb-6"
-              >
-                WhatsApp
-              </a>
+                <img
+                  src={activeImage}
+                  alt={project.title}
+                  className="w-full h-[450px] object-cover"
+                />
 
-              <h3 className="text-xl font-bold mb-4">
-                Google Map
-              </h3>
+                <div className="p-4 grid grid-cols-3 md:grid-cols-4 gap-4">
 
-              <iframe
-                src={project.map}
-                title="Google Map"
-                className="w-full h-64 rounded-xl border"
-                loading="lazy"
-                allowFullScreen
-              ></iframe>
+                  {project.gallery.map((image, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setActiveImage(image)}
+                      className={`rounded-xl overflow-hidden border-4 ${
+                        activeImage === image
+                          ? "border-green-600"
+                          : "border-transparent"
+                      }`}
+                    >
+                      <img
+                        src={image}
+                        alt={`${project.title} ${index + 1}`}
+                        className="w-full h-24 object-cover hover:scale-105 transition"
+                      />
+                    </button>
+                  ))}
+
+                </div>
+              </div>
+
+              {/* Description */}
+              <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+
+                <h2 className="text-3xl font-bold text-green-700 mb-5">
+                  About {project.title}
+                </h2>
+
+                <p className="text-gray-600 text-lg leading-8">
+                  {project.description}
+                </p>
+
+              </div>
+
+              {/* Features */}
+              <div className="bg-white rounded-2xl shadow-lg p-8">
+
+                <h2 className="text-3xl font-bold text-green-700 mb-6">
+                  Project Facilities
+                </h2>
+
+                <div className="grid md:grid-cols-2 gap-5">
+
+                  {project.details.map((detail, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-3"
+                    >
+                      <CheckCircle
+                        className="text-green-600"
+                        size={22}
+                      />
+
+                      <span className="text-gray-700">
+                        {detail}
+                      </span>
+                    </div>
+                  ))}
+
+                </div>
+
+              </div>
 
             </div>
 
-            {/* Book Site Visit Form */}
-            <BookVisitForm />
+            {/* Right Sidebar */}
+            <div>
+
+              <div className="bg-white rounded-2xl shadow-xl p-7 sticky top-24">
+
+                <p className="text-gray-500 mb-2">
+                  Starting Price
+                </p>
+
+                <h2 className="text-3xl font-bold text-green-700 mb-8">
+                  {project.price}
+                </h2>
+
+                <div className="space-y-5 border-t border-gray-200 pt-6">
+
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">
+                      Location
+                    </span>
+
+                    <span className="font-semibold">
+                      {project.location}
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">
+                      Plot Area
+                    </span>
+
+                    <span className="font-semibold">
+                      {project.area}
+                    </span>
+                  </div>
+
+                </div>
+
+                <div className="mt-8 space-y-3">
+
+                  <a
+                    href="tel:+8801773035945"
+                    className="w-full flex justify-center items-center gap-2 bg-green-700 hover:bg-green-800 text-white py-4 rounded-xl font-semibold transition"
+                  >
+                    <Phone size={20} />
+                    Call Now
+                  </a>
+
+                  <a
+                    href="https://wa.me/8801773035945"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full flex justify-center items-center gap-2 bg-green-500 hover:bg-green-600 text-white py-4 rounded-xl font-semibold transition"
+                  >
+                    <MessageCircle size={20} />
+                    WhatsApp
+                  </a>
+
+                </div>
+
+              </div>
+
+            </div>
 
           </div>
 
         </div>
+      </section>
 
-      </div>
-    </section>
+    </main>
   );
 }
