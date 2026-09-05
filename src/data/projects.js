@@ -3,7 +3,7 @@ export const projects = [
     id: 1,
     title: "Green City",
     location: "Rajshahi",
-    price: "৳ 3,50,000 / Katha",
+    price: "৳ 13,50,000 / Katha",
     area: "3 Katha",
 
     // এখানে আপনার আসল project-এর main/noksha image দিন
@@ -21,10 +21,10 @@ export const projects = [
     ],
 
     gallery: [
-      "/projects/green-city.jpg",
-      "/projects/green-city-2.jpg",
-      "/projects/green-city-3.jpg",
-      "/projects/green-city-4.jpg",
+      "/projects/green-city/1jpg",
+      "/projects/green-city/2.jpg",
+      "/projects/green-city/3.jpg",
+      "/projects/green-city/4.jpg",
     ],
   },
 
@@ -32,10 +32,10 @@ export const projects = [
     id: 2,
     title: "Dream Valley",
     location: "Paba, Rajshahi",
-    price: "৳ 2,80,000 / Katha",
+    price: "৳ 12,80,000 / Katha",
     area: "5 Katha",
 
-    image: "/projects/dream-valley.jpg",
+    image: "/projects/dream-valley/1.jpg",
 
     description:
       "Dream Valley is a planned land development project with modern facilities and excellent investment potential.",
@@ -49,9 +49,9 @@ export const projects = [
     ],
 
     gallery: [
-      "/projects/dream-valley.jpg",
-      "/projects/dream-valley-2.jpg",
-      "/projects/dream-valley-3.jpg",
+      "/projects/dream-valley/1.jpg",
+      "/projects/dream-valley/2.jpg",
+      "/projects/dream-valley/3.jpg",
     ],
   },
 
@@ -59,10 +59,10 @@ export const projects = [
     id: 3,
     title: "Smart Town",
     location: "Boalia, Rajshahi",
-    price: "৳ 4,20,000 / Katha",
+    price: "৳ 14,20,000 / Katha",
     area: "4 Katha",
 
-    image: "/projects/smart-town.jpg",
+    image: "/projects/smart-town/1.jpg",
 
     description:
       "Smart Town offers future-ready residential plots in a strategically located area of Rajshahi.",
@@ -76,9 +76,36 @@ export const projects = [
     ],
 
     gallery: [
-      "/projects/smart-town.jpg",
-      "/projects/smart-town-2.jpg",
-      "/projects/smart-town-3.jpg",
+      "/projects/smart-town/1.jpg",
+      "/projects/smart-town/2.jpg",
+      "/projects/smart-town/3.jpg",
+    ],
+  },
+
+   {
+    id: 4,
+    title: "Luminous Town",
+    location: "Boalia, Rajshahi",
+    price: "৳ 14,20,000 / Katha",
+    area: "2-4 Katha",
+
+    image: "/projects/Luminous Town/1.jpg",
+
+    description:
+      "Luminous Town offers future-ready residential plots in a strategically located area of Rajshahi.",
+
+    details: [
+      "Strategic location",
+      "Modern infrastructure",
+      "Road connectivity",
+      "Electricity facility",
+      "Secure investment opportunity",
+    ],
+
+    gallery: [
+      "/projects/smart-town/1.jpg",
+      "/projects/smart-town/2.jpg",
+      "/projects/smart-town/3.jpg",
     ],
   },
 ];
