@@ -85,7 +85,7 @@ export default function Footer() {
 
             <p>📞 +880 1712-345678</p>
 
-            <p>✉️ info@luminousproperties.com</p>
+            <p>✉️ luminousproperties001@gmail.com</p>
 
             <p>🕒 Sat - Thu : 9:00 AM - 6:00 PM</p>
 
